@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Koundinyas HR Portal</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f2f2f2;
+}
+
+.header{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+.menu{
+background:#34495e;
+overflow:hidden;
+}
+
+.menu a{
+float:left;
+color:white;
+padding:14px 20px;
+text-decoration:none;
+}
+
+.menu a:hover{
+background:#1abc9c;
+}
+
+.container{
+background:white;
+width:500px;
+margin:auto;
+margin-top:30px;
+padding:20px;
+border-radius:5px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:5px 0;
+}
+
+button{
+background:#1abc9c;
+color:white;
+border:none;
+padding:10px;
+width:100%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1 id="portalTitle">Koundinyas HR Portal</h1>
+</div>
+
+<div class="menu">
+
+<a id="homeLink" href="#">Home</a>
+<a id="employeeLink" href="#">Employees</a>
+<a id="leaveLink" href="#">Leave</a>
+<a id="payrollLink" href="#">Payroll</a>
+<a id="contactLink" href="#">Contact</a>
+
+</div>
+
+<div class="container">
+
+<h2>Employee Registration</h2>
+
+<form id="registrationForm">
+
+<label>Employee Name</label>
+<input type="text" id="empName" name="empName">
+
+<label>Email</label>
+<input type="email" id="email" name="email">
+
+<label>Department</label>
+<select id="department" name="department">
+<option>HR</option>
+<option>IT</option>
+<option>Finance</option>
+<option>Admin</option>
+</select>
+
+<label>Gender</label>
+
+<input type="radio" id="male" name="gender"> Male
+<input type="radio" id="female" name="gender"> Female
+
+<br><br>
+
+<label>Skills</label>
+
+<input type="checkbox" id="java"> Java
+<input type="checkbox" id="selenium"> Selenium
+<input type="checkbox" id="sql"> SQL
+
+<br><br>
+
+<button id="submitBtn">Register</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
