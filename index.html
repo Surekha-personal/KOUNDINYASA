@@ -1,118 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>GTS HR Portal</title>
+<meta charset="UTF-8">
+<title>Koundinyasa HR Portal</title>
 
 <style>
 
 body{
-font-family: Arial;
-background-color:#f2f2f2;
+font-family:Segoe UI;
+margin:0;
+background:#f4f6f9;
 }
 
-.header{
-background-color:#2c3e50;
+/* HEADER */
+
+header{
+background:#1f3c88;
 color:white;
 padding:15px;
-text-align:center;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-.menu{
-background-color:#34495e;
-overflow:hidden;
+header h1{
+margin:0;
 }
 
-.menu a{
-float:left;
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#ffd166;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+display:grid;
+grid-template-columns:250px 1fr;
+height:90vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+background:#2a5298;
+color:white;
+padding:20px;
+}
+
+.sidebar h3{
+border-bottom:1px solid white;
+padding-bottom:10px;
+}
+
+.sidebar a{
 display:block;
 color:white;
-padding:14px 20px;
+padding:10px;
 text-decoration:none;
-}
-
-.menu a:hover{
-background-color:#1abc9c;
-}
-
-.container{
-padding:20px;
-background:white;
-width:500px;
-margin:auto;
-margin-top:30px;
+margin-top:5px;
 border-radius:5px;
 }
+
+.sidebar a:hover{
+background:#1f3c88;
+}
+
+/* MAIN CONTENT */
+
+.content{
+padding:30px;
+}
+
+/* PROFILE CARD */
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.2);
+margin-bottom:20px;
+}
+
+.card h2{
+margin-top:0;
+}
+
+/* BUTTONS */
+
+.btn{
+background:#1f3c88;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.btn:hover{
+background:#16306b;
+}
+
+/* FORM */
 
 input,select{
 width:100%;
 padding:10px;
-margin:5px 0;
-}
-
-button{
-background:#1abc9c;
-color:white;
-border:none;
-padding:10px;
-width:100%;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:5px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="header">
-<h1 id="portalTitle">GTS HR Portal</h1>
-</div>
+<header>
 
-<div class="menu">
+<h1 id="portalTitle">Koundinyasa HR Portal</h1>
+
+<nav>
 <a id="homeLink" href="#">Home</a>
-<a id="employeeLink" href="#">Employees</a>
-<a id="leaveLink" href="#">Leave</a>
+<a id="profileLink" href="#">Profile</a>
+<a id="leaveMenu" href="#">Leave</a>
+<a id="payrollMenu" href="#">Payroll</a>
+<a id="logoutBtn" href="#">Logout</a>
+</nav>
+
+</header>
+
+
+<div class="dashboard">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h3>Employee Menu</h3>
+
+<a id="dashboardLink" href="#">Dashboard</a>
+<a id="attendanceLink" href="#">Attendance</a>
+<a id="leaveLink" href="#">Apply Leave</a>
 <a id="payrollLink" href="#">Payroll</a>
-<a id="contactLink" href="#">Contact</a>
+<a id="settingsLink" href="#">Settings</a>
+
 </div>
 
-<div class="container">
 
-<h2>Employee Registration</h2>
+<!-- MAIN CONTENT -->
 
-<form id="registrationForm">
+<div class="content">
 
-<label>Employee Name</label>
-<input type="text" id="empName" name="empName">
+<div class="card">
 
-<label>Email</label>
-<input type="email" id="email" name="email">
+<h2 id="welcomeText">Welcome Employee</h2>
 
-<label>Department</label>
-<select id="department" name="department">
-<option>HR</option>
-<option>IT</option>
-<option>Finance</option>
-<option>Admin</option>
+<p>ID: <span id="empId">EMP1001</span></p>
+<p>Department: <span id="department">IT</span></p>
+
+<button class="btn" id="viewProfileBtn">View Profile</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>Apply Leave</h2>
+
+<form id="leaveForm">
+
+<label>Leave Type</label>
+
+<select id="leaveType">
+<option>Casual Leave</option>
+<option>Sick Leave</option>
+<option>Annual Leave</option>
 </select>
 
-<label>Gender</label>
+<label>From Date</label>
 
-<input type="radio" id="male" name="gender" value="Male"> Male
-<input type="radio" id="female" name="gender" value="Female"> Female
+<input type="date" id="fromDate">
 
-<br><br>
+<label>To Date</label>
 
-<label>Skills</label>
+<input type="date" id="toDate">
 
-<input type="checkbox" id="java" name="skills"> Java
-<input type="checkbox" id="selenium" name="skills"> Selenium
-<input type="checkbox" id="sql" name="skills"> SQL
+<label>Reason</label>
 
-<br><br>
+<input type="text" id="reason">
 
-<button id="submitBtn">Register</button>
+<button class="btn" id="applyLeaveBtn">Submit Leave</button>
 
 </form>
+
+</div>
+
+
+<div class="card">
+
+<h2>Quick Actions</h2>
+
+<button class="btn" id="downloadPayslip">Download Payslip</button>
+
+<button class="btn" id="updateProfile">Update Profile</button>
+
+</div>
+
+</div>
 
 </div>
 
